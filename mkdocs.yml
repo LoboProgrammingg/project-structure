@@ -1,2 +1,5 @@
 site_name: CPF Generator
 repo_url: https://github.com/LoboProgrammingg/project-structure
+
+theme:
+  name: readthedocs
