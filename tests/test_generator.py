@@ -8,7 +8,7 @@ def test_generate_cpf_formatted():
     cpf = generate_cpf(formatted=True)
     assert re.match(r'^\d{3}\.\d{3}\.\d{3}-\d{2}$', cpf)
     assert validate_cpf(cpf)
-    
+
 
 def test_generate_cpf_unformatted():
     cpf = generate_cpf(formatted=False)
