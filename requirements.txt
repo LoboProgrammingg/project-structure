@@ -1,6 +1,5 @@
 click==8.2.1
 -e git+https://github.com/LoboProgrammingg/project-structure.git@a215eccb45cdafed96dbe93e42c8e19756b78c92#egg=cpf_generator
-flake8==7.2.0
 ghp-import==2.1.0
 iniconfig==2.1.0
 Jinja2==3.1.6
