@@ -2,35 +2,37 @@
 
 Pacote Python leve para **geração** e **validação** de números de CPF brasileiros por meio de uma interface de linha de comando (CLI).
 
+---
+
 ## Funcionalidades Principais
 
-  * **Gerar CPF**: Produz CPFs válidos, nos formatos:
-      * Formatado: `000.000.000-00`
-      * Sem formatação: `00000000000`
-  * **Validar CPF**: Verifica a validade de CPFs, tanto formatados quanto sem formatação.
-  * **CLI Amigável**: Comandos simples e intuitivos construídos com `argparse`.
-  * **Qualidade de Código**: O código é formatado com `blue` e `isort` para garantir consistência e legibilidade.
-  * **Testes Automatizados**: Cobertura completa de testes com `pytest` para assegurar a confiabilidade.
+* **Gerar CPF**: Produz CPFs válidos, nos formatos:
+    * Formatado: `000.000.000-00`
+    * Sem formatação: `00000000000`
+* **Validar CPF**: Verifica a validade de CPFs, tanto formatados quanto sem formatação.
+* **CLI Amigável**: Comandos simples e intuitivos construídos com `argparse`.
+* **Qualidade de Código**: O código é formatado com `blue` e `isort` para garantir consistência e legibilidade.
+* **Testes Automatizados**: Cobertura completa de testes com `pytest` para assegurar a confiabilidade.
+
+---
 
 ## Instalação
 
 1.  **Clone o repositório:**
-
     ```bash
     git clone https://github.com/pycodebr/cpf_generator_test.git
     cd cpf_generator
     ```
 
 2.  **Instale em modo editável:**
-
     ```bash
     pip install -e .
     ```
+    A instalação em **modo editável** (com a flag `-e`) é um passo crucial para o desenvolvimento. Este comando "linka" seu projeto ao ambiente Python, fazendo com que o pacote `cpf` (dentro da pasta `src`) seja reconhecido e possa ser importado de qualquer lugar do projeto.
 
-    Isso registra o pacote no seu ambiente e permite:
+    Isso **facilita enormemente as importações**, permitindo o uso de caminhos absolutos (ex: `from cpf.generator import generate`) em vez de caminhos relativos complexos. O resultado é um código mais limpo, robusto e fácil de manter.
 
-      * Importações absolutas (`import cpf.generator`).
-      * Execução da CLI via `python -m cli`.
+---
 
 ## Uso da CLI
 
@@ -43,10 +45,9 @@ Execute os comandos a partir do diretório raiz do projeto.
 | **Validar CPF formatado** | `python -m cli validate 529.982.247-25` |
 | **Validar CPF sem formatação**| `python -m cli validate 52998224725` |
 
-> **Dica:** Se ocorrer um erro de importação, verifique se:
->
-> 1.  Você está no diretório raiz do projeto.
-> 2.  O ambiente virtual ativo é o mesmo onde o pacote foi instalado.
+> **Dica:** Se ocorrer um erro de importação, verifique se você está na raiz do projeto e se o ambiente virtual ativo é o mesmo onde o pacote foi instalado com `pip install -e .`.
+
+---
 
 ## Ferramentas de Desenvolvimento e Qualidade
 
@@ -56,10 +57,9 @@ Este projeto utiliza um conjunto de ferramentas para garantir a qualidade, consi
 
 `pytest` é um framework que torna a criação de testes simples e escaláveis.
 
-  * **Por que é importante?** Testes automatizados garantem que as funcionalidades (`gerar` e `validar` CPF) funcionem como esperado e que novas alterações não quebrem o código existente. Isso é fundamental para a estabilidade do projeto.
+* **Por que é importante?** Testes automatizados garantem que as funcionalidades (`gerar` e `validar` CPF) funcionem como esperado e que novas alterações não quebrem o código existente. Isso é fundamental para a estabilidade do projeto.
 
-  * **Como usar:**
-
+* **Como usar:**
     1.  Instale o `pytest`:
         ```bash
         pip install pytest
@@ -73,10 +73,9 @@ Este projeto utiliza um conjunto de ferramentas para garantir a qualidade, consi
 
 `blue` é um formatador de código Python que reformata todo o seu código para seguir um estilo consistente, baseado no formatador `black`.
 
-  * **Por que é importante?** Um estilo de código uniforme em todo o projeto melhora drasticamente a legibilidade. Isso facilita a manutenção e a colaboração, pois todos os desenvolvedores escrevem e leem código no mesmo formato.
+* **Por que é importante?** Um estilo de código uniforme em todo o projeto melhora drasticamente a legibilidade. Isso facilita a manutenção e a colaboração, pois todos os desenvolvedores escrevem e leem código no mesmo formato.
 
-  * **Como usar:**
-
+* **Como usar:**
     1.  Instale o `blue`:
         ```bash
         pip install blue
@@ -86,14 +85,13 @@ Este projeto utiliza um conjunto de ferramentas para garantir a qualidade, consi
         blue src/cli.py
         ```
 
-### Sorting Importações com `isort`
+### ✨ Organização de Importações com `isort`
 
 `isort` é um utilitário Python que organiza as importações (`import`) em ordem alfabética e as separa por tipo.
 
-  * **Por que é importante?** Manter as importações organizadas torna o código mais limpo e evita conflitos de merge (`merge conflicts`) quando diferentes desenvolvedores adicionam novas importações aos arquivos.
+* **Por que é importante?** Manter as importações organizadas torna o código mais limpo e evita conflitos de merge (`merge conflicts`) quando diferentes desenvolvedores adicionam novas importações aos arquivos.
 
-  * **Como usar:**
-
+* **Como usar:**
     1.  Instale o `isort`:
         ```bash
         pip install isort
@@ -107,10 +105,9 @@ Este projeto utiliza um conjunto de ferramentas para garantir a qualidade, consi
 
 `MkDocs` é um gerador de sites estáticos rápido e simples, voltado para a criação de documentação de projetos.
 
-  * **Por que é importante?** Uma boa documentação é essencial para que outros possam entender, usar e contribuir com o seu projeto. `MkDocs` facilita a criação de uma documentação bonita e funcional a partir de arquivos Markdown.
+* **Por que é importante?** Uma boa documentação é essencial para que outros possam entender, usar e contribuir com o seu projeto. `MkDocs` facilita a criação de uma documentação bonita e funcional a partir de arquivos Markdown.
 
-  * **Como usar:**
-
+* **Como usar:**
     1.  Instale o `MkDocs`:
         ```bash
         pip install mkdocs
@@ -123,6 +120,8 @@ Este projeto utiliza um conjunto de ferramentas para garantir a qualidade, consi
         ```bash
         mkdocs serve
         ```
+
+---
 
 ## Estrutura do Projeto
 
@@ -139,25 +138,29 @@ cpf_generator/
 └── setup.py                 # Configuração do pacote
 ```
 
+---
+
 ## Contribuindo
 
-1.  Faça um *Fork* deste repositório.
-2.  Crie uma *branch* de *feature*:
+1.  Faça um **Fork** deste repositório.
+2.  Crie uma **branch** de feature:
     ```bash
     git checkout -b feature/NomeDaFuncionalidade
     ```
-3.  Faça seus *commits*:
+3.  Faça seus **commits**:
     ```bash
     git commit -m "Descrição da mudança"
     ```
-4.  Envie para a sua *branch*:
+4.  Envie para a sua branch:
     ```bash
     git push origin feature/NomeDaFuncionalidade
     ```
-5.  Abra um *Pull Request*.
+5.  Abra um **Pull Request**.
 
 > Siga o guia de estilo PEP 8, utilize as ferramentas de formatação e inclua testes para novas funcionalidades.
 
+---
+
 ## Licença
 
-Este projeto está sob a [Licença MIT](https://www.google.com/search?q=LICENSE).
+Este projeto está sob a **Licença MIT**.
