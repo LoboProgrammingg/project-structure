@@ -20,8 +20,8 @@ Pacote Python leve para **geração** e **validação** de números de CPF brasi
 
 1.  **Clone o repositório:**
     ```bash
-    git clone https://github.com/pycodebr/cpf_generator_test.git
-    cd cpf_generator
+    git clone https://github.com/LoboProgrammingg/project-structure.git
+    cd project-structure
     ```
 
 2.  **Instale em modo editável:**
